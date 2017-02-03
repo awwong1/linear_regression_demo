@@ -8,10 +8,12 @@ x_values = dataframe[[0]]
 y_values = dataframe[[1]]
 
 #train model on data
-body_reg = linear_model.LinearRegression()
-body_reg.fit(x_values, y_values)
+model = linear_model.LinearRegression()
+model.fit(x_values, y_values)
+
+print(model.predict([[127], [248]]))
 
 #visualize results
 plt.scatter(x_values, y_values)
-plt.plot(x_values, body_reg.predict(x_values))
+plt.plot(x_values, model.predict(x_values))
 plt.show()
